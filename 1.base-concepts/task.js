@@ -29,30 +29,18 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   ) {
     return false;
   }
-// Вопросы Почему мы преобразование процентной ставки в десятичную пишем просто в строчке простой?
-//percent - процент за пользование кредитом, 
-//contribution - первоначальный взнос, 
-//amount -  сумма кредита,
-//countMonths - длительность кредита
-//loanAmount - остаток по кредиту - тело кредита
-//monthlyInteres - Месячная процентная ставка
-//monthlyPayment - Месячный платеж
 
-
-  percent = percent / 100; // Преобразование процентной ставки в десятичную форму
-  let loanAmount = amount - contribution; // Тело кредита
-  let monthlyInterest = percent / 12; // Месячная процентная ставка
+  percent = percent / 100; 
+  let loanAmount = amount - contribution; 
+  let monthlyInterest = percent / 12; 
 
   let monthlyPayment =
     loanAmount *
     (monthlyInterest +
-      monthlyInterest / (Math.pow(1 + monthlyInterest, countMonths) - 1));// Я вот тут не 
-//поняла как мы посчитали Месячный платеж=== 
-//Тело кредита *(Месячная процент ставка+ Месячная процентная ставка/(Math.pow(1 + //monthlyInterest, countMonths) - 1)). Итого я не поняла вот эту запись
-//Math.pow(1 + monthlyInterest, countMonths) - 1)) ----  как это разобрать?
+      monthlyInterest / (Math.pow(1 + monthlyInterest, countMonths) - 1)); 
   
-  let totalPayment = monthlyPayment * countMonths; // Общая сумма выплат
-  totalPayment = Math.round(totalPayment * 100) / 100; // Округление до двух значений после запятой
+  let totalPayment = monthlyPayment * countMonths; 
+  totalPayment = Math.round(totalPayment * 100) / 100; 
 
   return totalPayment;
 }
