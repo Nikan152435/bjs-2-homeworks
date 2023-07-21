@@ -2,20 +2,15 @@
 function solveEquation(a, b, c) {
   let arr = [];
   let diskriminant = Math.pow(b,2)-4*a*c;
-  
-  
-  if (diskriminant < 0) {
-   return arr;
+ 
+  if (diskriminant > 0) {
+  let rootFirst = (-b + Math.sqrt(d) )/(2*a);
+  let rootSecond = (-b - Math.sqrt(d) )/(2*a);
+  arr.push(rootFirst, rootSecond);
 
-} else if (diskriminant === 0) {
+} else if(diskriminant === 0) {
   let root = -b / (2 * a);
   arr.push(root);
-
-} else if (diskriminant > 0) {
-  
-  let rootFirst = (-b + Math.sqrt(diskriminant) )/(2*a);
-  let rootSecond = (-b - Math.sqrt(diskriminant) )/(2*a);
-  arr.push(rootFirst, rootSecond);
 } 
 return arr;
 }
