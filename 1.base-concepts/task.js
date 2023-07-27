@@ -1,14 +1,14 @@
 "use strict";
 function solveEquation(a, b, c) {
   let arr = [];
-  let diskriminant = Math.pow(b,2)-4*a*c;
+  let d = Math.pow(b,2)-4*a*c;
  
-  if (diskriminant > 0) {
+  if (d > 0) {
   let rootFirst = (-b + Math.sqrt(d) )/(2*a);
   let rootSecond = (-b - Math.sqrt(d) )/(2*a);
   arr.push(rootFirst, rootSecond);
 
-} else if(diskriminant === 0) {
+} else if(d === 0) {
   let root = -b / (2 * a);
   arr.push(root);
 } 
