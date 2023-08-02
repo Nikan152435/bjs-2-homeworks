@@ -18,10 +18,9 @@ Student.prototype.setSubject = function(subjectName) {
 newStudent1.setSubject('history');
 
 Student.prototype.addMarks = function(...marks) {
-    if (this.hasOwnProperty('marks') && this.marks !== []) {
+    if (this.hasOwnProperty('marks')) {
         this.marks.push(...marks);
-    } else {
-        return 0;
+    
     }
 }
 
