@@ -1,9 +1,6 @@
-//Задача № 1
-function cachingDecoratorNew(func) {
-  
-}
-
-//Задача № 2
+//Задача № 1Debounce декоратор с моментальным вызовом и подсчётом 
+//количества вызовов
+ 
 function debounceDecoratorNew(func, delay) {
     let timeoutId = null;
     wrapper.count = 0;
@@ -24,3 +21,8 @@ function debounceDecoratorNew(func, delay) {
 
 return wrapper;
 }
+module.exports = {
+    debounceDecoratorNew, 
+  }
+
+  
